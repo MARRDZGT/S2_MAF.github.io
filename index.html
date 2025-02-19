@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.280">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Matemáticas Avanzadas de la Física (Grupo 8162)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script src="https://kit.fontawesome.com/78ddb093ea.js" crossorigin="anonymous"></script>
+
+
+<meta property="og:title" content="MAF-2025">
+    <!--<meta property="og:description" content="UNM Physics and Astronomy, Summer 2023 course">
+<meta property="og:site-name" content="CQuIC Summer 2023 course">
+  -->
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./images/home--v5.png" alt="" class="navbar-logo">
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./Quizzes_index.html">
+ <span class="menu-text">Examenes Cortitos</span></a>
+  </li>  
+  <!-- 
+  <li class="nav-item">
+    <a class="nav-link" href="./recordings.html">
+ <span class="menu-text">Recordings</span></a>
+  </li>  
+  -->
+</ul>
+<!-- 
+              <div class="quarto-toggle-container">
+                  <a href="" class="quarto-color-scheme-toggle nav-link" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
+              </div>
+            -->
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+      <figure class="figure">
+        <p><img src="images/logoFC85.png" class="img-fluid figure-img"  width="150", alt="Centered Image"></p>
+        </figure>
+    
+        <nav id="TOC" role="doc-toc" class="toc-active">
+
+    <h2 id="toc-title">Contenido</h2>
+   
+  <ul>
+    <!--
+  <li><a href="#course-coordinator" id="toc-course-coordinator" class="nav-link active" data-scroll-target="#course-coordinator">Course coordinator</a></li>
+  <li><a href="#course-duration" id="toc-course-duration" class="nav-link" data-scroll-target="#course-duration">Course duration</a></li>
+  <li><a href="#course-prerequisites" id="toc-course-prerequisites" class="nav-link" data-scroll-target="#course-prerequisites">Course prerequisites</a></li>
+  <li><a href="#assignments" id="toc-assignments" class="nav-link" data-scroll-target="#assignments">Assignments</a></li>
+  <li><a href="#general-course-information" id="toc-general-course-information" class="nav-link" data-scroll-target="#general-course-information">General course information</a></li>
+  -->
+  <li><a href="#course-duration" id="toc-course-duration" class="nav-link" data-scroll-target="#course-duration">Objetivo</a></li>
+  </ul>
+<div class="toc-actions"><div></div><div class="action-links"><p></p><p></p></div></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+  
+
+
+<header id="title-block-header" class="quarto-title-block default">
+
+<div class="quarto-title">
+<h1 class="title">Matemáticas Avanzadas de la Física - 8162
+
+
+</h1>
+
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+</header>
+
+
+<div class="quarto-figure quarto-figure-center" style="float: center;">
+<figure class="figure">
+<p><img src="images/A.png" class="img-fluid figure-img" alt="Hex logo that says &quot; &quot;" width="450"></p>
+</figure>
+</div>
+<!--
+<p><strong>UNM Physics and Astronomy, Summer 2023 course</strong></p>
+<p><em>Organized by the Center for Quantum Information and Control</em></p>
+-->
+
+<!--
+<section id="course-coordinator" class="level1 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="course-coordinator">Profesores</h3>
+<ul>
+  <li><strong style="font-size: 1.2em; color: #0072C6;">Edzna Claudia Silva Pérez</strong> <br>Email: edzna@ciencias.unam.mx </li>
+  <li><strong style="font-size: 1.2em; color: #0072C6;">Marco A. Rodríguez </strong> <br>Email: gateishion2@unm.edu <br>Office: PAIS 2556</li>
+  <li><strong>Office Hours:</strong> <br>May 31st – August 2nd, Thursdays 4:00pm-6:50pm in PAIS 2556</li>
+</ul>
+</section>
+-->
+
+<section id="course-duration" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="course-duration"><strong style="font-size: 1.2em; color: #0072C6;">Objetivo</strong> </h2>
+<p> La intención del curso de Matemáticas Avanzadas de la Física o Métodos Matemáticos junto con Funciones Especiales y Transformadas Integrales, es familiarizar al estudiante de la licenciatura en física o afines, con las herramientas matemáticas necesarias para abordar los problemas fundamentales presentes en esta ciencia natural. La idea es condensar el formalismo matemático aprendido durante los cursos básicos y el tronco común de las matemáticas puras aplicadas sobre los topicos elementales de la física teórica. Para un aprovechamiento eficiente del curso, se sugiere haber cursado todas las matemáticas básicas de los primeros cinco semestres de la licenciatura en física y/o matemáticas, así como los seis cursos básicos de la licenciatura en física.</p>
+
+<!--
+</section>
+<section id="course-prerequisites" class="level3 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="course-prerequisites">Course prerequisites</h2>
+<p>This course assumes familiarity with quantum mechanics at the level of Physics 521-522.</p>
+</section>
+<section id="assignments" class="level4 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="assignments">Assignments</h2>
+<p>Participants are required to read the materials assigned for each session in advance, and to participate in the group discussions during each session. Additionally, participants should be willing to present the assigned material.</p>
+
+<p><strong>Teach-Along-Tract:</strong> In parallel with the sessions, students are encouraged to work with Tzula to experiment with science of learning tools in their lectures. Emphasis will be on promoting metacognition (<a href=https://cft.vanderbilt.edu/guides-sub-pages/metacognition/>guides-sub-pages/metacognition/</a>) and utilizing classroom activities (<a href=https://blogs.uoregon.edu/annie/2013/12/16/classroom-activities-from-the-science-literacy-program/>classroom-activities-from-the-science-literacy-program</a>), as well as helping presenters’ access their creativity and feel empowered to develop their own teaching tools and techniques! </p>
+
+</section>
+<section id="general-course-information" class="level5 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="general-course-information">General course information</h2>
+
+<p>This 11-week course offers a comprehensive exploration of topics related to quantum internet and quantum parameter estimation. The first half of the course (sessions 1-6) will focus on the fundamental principles necessary to understand the development of quantum internet technology, including distributed quantum computing, quantum cryptography, and quantum key distribution. The second half of the course (sessions 7-11) will delve into topics related to quantum parameter estimation theory from the mathematical foundations to the applications, including quatum sensing and quantum metrology.</p>
+
+<p>The course sessions will be held every Wednesday from 3:00pm to 5:00pm Mountain Daylight Time and will be conducted in a hybrid format, with both in-person attendance at PAIS room ____ and virtual attendance using Zoom.</p>
+
+</section>
+-->
+
+<style>
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+  .logo-container img:first-child {
+    margin-right: auto;
+  }
+  .logo-container img:last-child {
+    margin-left: auto;
+  }
+</style>
+<!--
+<footer>
+  <div class="footer-container">
+    <div class="logo-container">
+      <img src="images/cquic-logo_2.png" alt="Logo 1" width="50%" height="50%">
+      <img src="images/qs.png" alt="Logo 2" width="30%" height="30%">
+    </div>
+
+  </div>
+</footer>
+-->
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const disableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'prefetch';
+    }
+  }
+  const enableStylesheet = (stylesheets) => {
+    for (let i=0; i < stylesheets.length; i++) {
+      const stylesheet = stylesheets[i];
+      stylesheet.rel = 'stylesheet';
+    }
+  }
+  const manageTransitions = (selector, allowTransitions) => {
+    const els = window.document.querySelectorAll(selector);
+    for (let i=0; i < els.length; i++) {
+      const el = els[i];
+      if (allowTransitions) {
+        el.classList.remove('notransition');
+      } else {
+        el.classList.add('notransition');
+      }
+    }
+  }
+  const toggleColorMode = (alternate) => {
+    // Switch the stylesheets
+    const alternateStylesheets = window.document.querySelectorAll('link.quarto-color-scheme.quarto-color-alternate');
+    manageTransitions('#quarto-margin-sidebar .nav-link', false);
+    if (alternate) {
+      enableStylesheet(alternateStylesheets);
+      for (const sheetNode of alternateStylesheets) {
+        if (sheetNode.id === "quarto-bootstrap") {
+          toggleBodyColorMode(sheetNode);
+        }
+      }
+    } else {
+      disableStylesheet(alternateStylesheets);
+      toggleBodyColorPrimary();
+    }
+    manageTransitions('#quarto-margin-sidebar .nav-link', true);
+    // Switch the toggles
+    const toggles = window.document.querySelectorAll('.quarto-color-scheme-toggle');
+    for (let i=0; i < toggles.length; i++) {
+      const toggle = toggles[i];
+      if (toggle) {
+        if (alternate) {
+          toggle.classList.add("alternate");     
+        } else {
+          toggle.classList.remove("alternate");
+        }
+      }
+    }
+    // Hack to workaround the fact that safari doesn't
+    // properly recolor the scrollbar when toggling (#1455)
+    if (navigator.userAgent.indexOf('Safari') > 0 && navigator.userAgent.indexOf('Chrome') == -1) {
+      manageTransitions("body", false);
+      window.scrollTo(0, 1);
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+        manageTransitions("body", true);
+      }, 40);  
+    }
+  }
+  const isFileUrl = () => { 
+    return window.location.protocol === 'file:';
+  }
+  const hasAlternateSentinel = () => {  
+    let styleSentinel = getColorSchemeSentinel();
+    if (styleSentinel !== null) {
+      return styleSentinel === "alternate";
+    } else {
+      return false;
+    }
+  }
+  const setStyleSentinel = (alternate) => {
+    const value = alternate ? "alternate" : "default";
+    if (!isFileUrl()) {
+      window.localStorage.setItem("quarto-color-scheme", value);
+    } else {
+      localAlternateSentinel = value;
+    }
+  }
+  const getColorSchemeSentinel = () => {
+    if (!isFileUrl()) {
+      const storageValue = window.localStorage.getItem("quarto-color-scheme");
+      return storageValue != null ? storageValue : localAlternateSentinel;
+    } else {
+      return localAlternateSentinel;
+    }
+  }
+  let localAlternateSentinel = 'default';
+  // Dark / light mode switch
+  window.quartoToggleColorScheme = () => {
+    // Read the current dark / light value 
+    let toAlternate = !hasAlternateSentinel();
+    toggleColorMode(toAlternate);
+    setStyleSentinel(toAlternate);
+  };
+  // Ensure there is a toggle, if there isn't float one in the top right
+  if (window.document.querySelector('.quarto-color-scheme-toggle') === null) {
+    const a = window.document.createElement('a');
+    a.classList.add('top-right');
+    a.classList.add('quarto-color-scheme-toggle');
+    a.href = "";
+    a.onclick = function() { try { window.quartoToggleColorScheme(); } catch {} return false; };
+    const i = window.document.createElement("i");
+    i.classList.add('bi');
+    a.appendChild(i);
+    window.document.body.appendChild(a);
+  }
+  // Switch to dark mode if need be
+  if (hasAlternateSentinel()) {
+    toggleColorMode(true);
+  } else {
+    toggleColorMode(false);
+  }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

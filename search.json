@@ -1,0 +1,65 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Quantum Internet and Quantum Metrology",
+    "section": "",
+    "text": "UNM Physics and Astronomy, Summer 2023 course\nOrganized by the Center for Quantum Information and Control"
+  },
+  {
+    "objectID": "index.html#license",
+    "href": "index.html#license",
+    "title": "Quantum Internet and Quantum Metrology",
+    "section": "License",
+    "text": "License\nThis online work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International. Visit here for more information about the license."
+  },
+  {
+    "objectID": "index.html#acknowledements",
+    "href": "index.html#acknowledements",
+    "title": "Quantum Internet and Quantum Metrology",
+    "section": "Acknowledements",
+    "text": "Acknowledements\nHuge thanks to the #rstats education community who have made numerous suggestions for this resource, to Lee Suddaby and Zeno Kujawa for converting the homework assignments to learnr tutorials, and to Müge Çetinkaya for the hex logo!\nThis website is built with Quarto, the lovely icons by icons8, and none of this would be possible without the tidyverse."
+  },
+  {
+    "objectID": "index.html#course-coordinator",
+    "href": "index.html#course-coordinator",
+    "title": "Quantum Internet and Quantum Metrology",
+    "section": "Course coordinator",
+    "text": "Course coordinator\nTzula\nEmail:\nOffice: PAIS"
+  },
+  {
+    "objectID": "index.html#course-duration",
+    "href": "index.html#course-duration",
+    "title": "Quantum Internet and Quantum Metrology",
+    "section": "Course duration",
+    "text": "Course duration"
+  },
+  {
+    "objectID": "index.html#course-prerequisites",
+    "href": "index.html#course-prerequisites",
+    "title": "Quantum Internet and Quantum Metrology",
+    "section": "Course prerequisites",
+    "text": "Course prerequisites\nThis course assumes familiarity with quantum mechanics at the level of Physics 521-522."
+  },
+  {
+    "objectID": "index.html#assignments",
+    "href": "index.html#assignments",
+    "title": "Quantum Internet and Quantum Metrology",
+    "section": "Assignments",
+    "text": "Assignments\nParticipants are required to read the materials assigned for each session in advance, and to participate in the group discussions during each session. Additionally, participants should be willing to present the assigned material."
+  },
+  {
+    "objectID": "index.html#general-course-information",
+    "href": "index.html#general-course-information",
+    "title": "Quantum Internet and Quantum Metrology",
+    "section": "General course information",
+    "text": "General course information\nThis course is a 10-week self-study program in which topics related to tensor network methods are explored. The first half of the course (sessions 1-6) will focus specifically on the matrix product states (MPS) tensor network formalism, while the second half (sessions 7-10) will survey topics related to tensor network methods in general. The first session will introduce the participants to the basics of tensor networks, while also highlighting examples of applications for tensor networks. An overview of the topics of this course will also be given in this session. In the remaining nine sessions, the course participants will take turns presenting topics based on reading material, which will be assigned every week. The presenters will also facilitate group discussions of their topics.\nThe 10 course sessions will be held on Wednesday from 4.00pm to 5.15pm Mountain Daylight Time and will follow the usual ‘hybrid’ format with both in-person attendance at PAIS room 2540 and virtual attendance using Zoom."
+  },
+  {
+    "objectID": "content.html",
+    "href": "content.html",
+    "title": "Course content",
+    "section": "",
+    "text": "The course content is organized in five units: Hello world, Exploring data, Data science ethics, Making rigorous conclusions, and Looking further. For each unit numerous slide decks, homework and lab assignments, and application exercises are provided. Also provided are interactive tutorials, exams, and project assignment."
+  }
+]
