@@ -201,7 +201,7 @@ function displayScore() {
 //}
 
 function saveResult(userId, userScore) {
-    var url = "https://script.google.com/macros/s/AKfycbwNsdJU7jaq5AaPujyCpbGdVoWBpuIqWcG9L0Jzfv-G_PhrxQ97O_cD2lXsDzJ-euAgsQ/exec"; // Reemplaza con tu URL de Google Apps Script
+    var url = "https://script.google.com/macros/s/AKfycbxDDrW9r5PHOZxt8-KmFqgi2_ZvBfNrT10e4xWDD4y0RyC8RzEqE8gGmdRDkK4n0o1D9A/exec"; // Reemplaza con tu URL de Google Apps Script
 
     fetch(url, {
         method: "POST",
