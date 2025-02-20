@@ -21,32 +21,18 @@ var progressBar = document.getElementById('progress-bar');
 
 // Function to check if the user has already taken the quiz
 function checkUserExists(userId, callback) {
-    fetch(`http://localhost:3000/check-user?userId=${userId}`)
+    var url = "https://script.google.com/macros/s/AKfycbx6hhxG7afxGSM7-Z3VWGE9GVcOvKNsMmj5CJ96S8VD5HKrB9elG2cH1V5ennBqO0uygQ/exec"; // Tu URL de Google Apps Script
+
+    fetch(`${url}?userId=${userId}`)
         .then(response => response.json())
         .then(data => {
+            console.log("✅ Respuesta de verificación:", data);
             callback(data.exists);
         })
         .catch(error => {
             console.error("❌ Error al verificar usuario:", error);
             callback(false);
         });
-}
-
-// Function to start the timer
-function startTimer() {
-  timerValue = 10;
-  progressBar.style.width = '100%';
-
-  timerInterval = setInterval(function () {
-      timerValue -= 0.1;
-      var progressPercentage = (timerValue / 10) * 100;
-      progressBar.style.width = progressPercentage + '%';
-
-      if (timerValue <= 0) {
-          clearInterval(timerInterval);
-          checkAnswer(null);
-      }
-  }, 100);
 }
 
 
@@ -201,7 +187,7 @@ function displayScore() {
 //}
 
 function saveResult(userId, userScore) {
-    var url = "https://script.google.com/macros/s/AKfycbxDDrW9r5PHOZxt8-KmFqgi2_ZvBfNrT10e4xWDD4y0RyC8RzEqE8gGmdRDkK4n0o1D9A/exec"; // Reemplaza con tu URL de Google Apps Script
+    var url = "https://script.google.com/macros/s/AKfycbx6hhxG7afxGSM7-Z3VWGE9GVcOvKNsMmj5CJ96S8VD5HKrB9elG2cH1V5ennBqO0uygQ/exec"; // Reemplaza con tu URL de Google Apps Script
 
     fetch(url, {
         method: "POST",
