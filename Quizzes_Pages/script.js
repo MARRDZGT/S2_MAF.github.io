@@ -19,7 +19,8 @@ var totalQuestionsElement = document.getElementById('total-questions');
 var progressBar = document.getElementById('progress-bar');
 
 // 📌 URL de Google Apps Script (reemplazada con la nueva)
-var googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbzeDgZQIp9Ys_igH1Fc0FsPKspyxMG739UMhQLObfiOQZ_4k5W4I1VY-tgSyr9saYycbA/exec";
+var googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbzcAi2oLCs1M3n_kUAWhp9yfj10Du3-IZZEuR2JSacl0ScDuihtApc1xkZpOu8SabkB1w/exec";
+
 
 // 📌 Verifica si un usuario ya hizo el examen
 function checkUserExists(userId, callback) {
