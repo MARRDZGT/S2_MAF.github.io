@@ -1,11 +1,11 @@
-// Quiz Variables
+// 📌 Quiz Variables
 var currentQuestionIndex = 0;
 var score = 0;
-var timerValue = 10; 
+var timerValue = 10;
 var timerInterval;
-var userName = ''; 
+var userName = '';
 
-// DOM Elements
+// 📌 DOM Elements
 var welcomeContainer = document.getElementById('welcome-container');
 var nameInput = document.getElementById('name-input');
 var startButton = document.getElementById('start-button');
@@ -18,12 +18,12 @@ var scoreElement = document.getElementById('score');
 var totalQuestionsElement = document.getElementById('total-questions');
 var progressBar = document.getElementById('progress-bar');
 
+// 📌 URL de Google Apps Script (reemplazada con la nueva)
+var googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbzeDgZQIp9Ys_igH1Fc0FsPKspyxMG739UMhQLObfiOQZ_4k5W4I1VY-tgSyr9saYycbA/exec";
 
-// Function to check if the user has already taken the quiz
+// 📌 Verifica si un usuario ya hizo el examen
 function checkUserExists(userId, callback) {
-    var url = "https://script.google.com/macros/s/AKfycbx6hhxG7afxGSM7-Z3VWGE9GVcOvKNsMmj5CJ96S8VD5HKrB9elG2cH1V5ennBqO0uygQ/exec"; // Tu URL de Google Apps Script
-
-    fetch(`${url}?userId=${userId}`)
+    fetch(`${googleAppsScriptURL}?userId=${userId}`)
         .then(response => response.json())
         .then(data => {
             console.log("✅ Respuesta de verificación:", data);
@@ -35,11 +35,9 @@ function checkUserExists(userId, callback) {
         });
 }
 
-
-
-// Function to start the quiz
+// 📌 Iniciar el quiz
 startButton.addEventListener('click', function() {
-    userName = nameInput.value.trim(); 
+    userName = nameInput.value.trim();
 
     if (userName === "") {
         alert("Por favor ingresa tu número de cuenta.");
@@ -57,35 +55,34 @@ startButton.addEventListener('click', function() {
     });
 });
 
-// Function to display the current question
+// 📌 Mostrar preguntas del quiz
 function displayQuestion() {
-  if (currentQuestionIndex >= quizQuestions.length) {
-      displayScore();
-      return;
-  }
+    if (currentQuestionIndex >= quizQuestions.length) {
+        displayScore();
+        return;
+    }
 
-  var currentQuestion = quizQuestions[currentQuestionIndex];
+    var currentQuestion = quizQuestions[currentQuestionIndex];
+    console.log("🟢 Mostrando pregunta:", currentQuestion);
 
-  console.log("🟢 Mostrando pregunta:", currentQuestion);
+    questionArea.textContent = currentQuestion.question;
+    optionsArea.innerHTML = '';
 
-  questionArea.textContent = currentQuestion.question;
-  optionsArea.innerHTML = '';
+    for (var i = 0; i < currentQuestion.options.length; i++) {
+        var option = document.createElement('div');
+        option.className = 'option';
+        option.innerHTML =
+            `<input type="radio" name="answer" id="option${i}" value="${i}">
+            <label for="option${i}">${currentQuestion.options[i]}</label>`;
+        option.setAttribute('data-index', i);
+        option.querySelector('label').addEventListener('click', checkAnswer);
+        optionsArea.appendChild(option);
+    }
 
-  for (var i = 0; i < currentQuestion.options.length; i++) {
-      var option = document.createElement('div');
-      option.className = 'option';
-      option.innerHTML =
-          '<input type="radio" name="answer" id="option' + i + '" value="' + i + '"> <label for="option' + i + '">' + currentQuestion.options[i] + '</label>';
-      option.setAttribute('data-index', i);
-      option.querySelector('label').addEventListener('click', checkAnswer);
-      optionsArea.appendChild(option);
-  }
-
-  startTimer();
+    startTimer();
 }
 
-
-// Function to check the answer
+// 📌 Verificar la respuesta seleccionada
 function checkAnswer(event) {
     clearInterval(timerInterval);
     var selectedOption = event ? event.currentTarget.parentNode : null;
@@ -93,18 +90,18 @@ function checkAnswer(event) {
     var currentQuestion = quizQuestions[currentQuestionIndex];
 
     if (selectedAnswerIndex !== null && selectedAnswerIndex === currentQuestion.correctAnswer) {
-        feedbackArea.textContent = 'Correcto!';
+        feedbackArea.textContent = '✅ ¡Correcto!';
         score++;
     } else if (selectedAnswerIndex === null && timerValue <= 0) {
-        feedbackArea.textContent = 'Time Out!';
+        feedbackArea.textContent = '⏳ ¡Tiempo agotado!';
     } else {
-        feedbackArea.textContent = 'Incorrecto.';
+        feedbackArea.textContent = '❌ Incorrecto.';
     }
 
     setTimeout(nextQuestion, 2000);
 }
 
-// Function to move to the next question
+// 📌 Pasar a la siguiente pregunta
 function nextQuestion() {
     currentQuestionIndex++;
 
@@ -115,92 +112,70 @@ function nextQuestion() {
     }
 }
 
-// Function to display the final score and save it
-//function displayScore() {
-//    questionArea.textContent = '';
-//    optionsArea.innerHTML = '';
-//    feedbackArea.textContent = '';
-//
-//    var percentage = (score / quizQuestions.length) * 100;
-//    var message = percentage >= 50 ? `Bien ${userName}! Tu puntaje es ${percentage}` : `Puedes mejorar, ${userName}. Tu puntaje es ${percentage}`;
-//
-//    scoreElement.textContent = score;
-//    totalQuestionsElement.textContent = quizQuestions.length;
-//    scoreArea.style.display = 'block';
-//    scoreArea.innerHTML = '<p>' + message + '</p>';
-//    progressBar.style.display = 'none';
-//
-//    // Guardar el resultado en la base de datos
-//    saveResult(userName, score);
-//}
+// 📌 Mostrar el puntaje final y guardar resultados
 function displayScore() {
-  // Limpiar la pantalla del quiz
-  questionArea.textContent = '';
-  optionsArea.innerHTML = '';
-  feedbackArea.textContent = '';
+    questionArea.textContent = '';
+    optionsArea.innerHTML = '';
+    feedbackArea.textContent = '';
 
-  // Calcular el puntaje final
-  var percentage = (score / quizQuestions.length) * 100;
-  var message = (percentage >= 50) ? 
-      `Bien hecho, ${userName}! Tu puntaje es ${percentage.toFixed(2)}%` : 
-      `Puedes mejorar, ${userName}. Tu puntaje es ${percentage.toFixed(2)}%`;
+    var percentage = (score / quizQuestions.length) * 100;
+    var message = (percentage >= 50) ? 
+        `🎉 ¡Bien hecho, ${userName}! Tu puntaje es ${percentage.toFixed(2)}%` : 
+        `📚 Puedes mejorar, ${userName}. Tu puntaje es ${percentage.toFixed(2)}%`;
 
-  // Mostrar el puntaje en la interfaz
-  scoreElement.textContent = score;
-  totalQuestionsElement.textContent = quizQuestions.length;
-  scoreArea.style.display = 'block';
-  scoreArea.innerHTML = `<p>${message}</p>`;
-  progressBar.style.display = 'none';
+    scoreElement.textContent = score;
+    totalQuestionsElement.textContent = quizQuestions.length;
+    scoreArea.style.display = 'block';
+    scoreArea.innerHTML = `<p>${message}</p>`;
+    progressBar.style.display = 'none';
 
-  // Evitar que el quiz se reinicie automáticamente
-  clearInterval(timerInterval);
+    clearInterval(timerInterval);
 
-  // Agregar un botón para volver al inicio (HOME)
-  var homeButton = document.createElement('a');
-  homeButton.textContent = 'Volver al Inicio';
-  homeButton.href = '/';  // Ajusta esta ruta si tu home está en otra página
-  homeButton.className = 'btn btn-primary mt-3';
-  homeButton.style.display = 'block';
-  homeButton.style.marginTop = '20px';
+    // Guardar el resultado en Google Sheets
+    saveResult(userName, score);
 
-  scoreArea.appendChild(homeButton);
+    // Agregar un botón para volver al inicio (HOME)
+    var homeButton = document.createElement('a');
+    homeButton.textContent = '🏠 Volver al Inicio';
+    homeButton.href = '/';
+    homeButton.className = 'btn btn-primary mt-3';
+    homeButton.style.display = 'block';
+    homeButton.style.marginTop = '20px';
+
+    scoreArea.appendChild(homeButton);
 }
 
-
-
-// Function to send result to the server
-//function saveResult(userId, userScore) {
-//    console.log("🚀 Enviando datos al servidor:", userId, userScore);
-//
-//    fetch("http://localhost:3000/save-result", { 
-//        method: "POST",
-//        headers: { "Content-Type": "application/json" },
-//        body: JSON.stringify({ userId, userScore })
-//    })
-//    .then(response => response.text())
-//    .then(data => {
-//        console.log("✅ Respuesta del servidor:", data);
-//    })
-//    .catch(error => {
-//        console.error("❌ Error al guardar:", error);
-//    });
-//}
-
+// 📌 Guardar el resultado en Google Sheets
 function saveResult(userId, userScore) {
-    var url = "https://script.google.com/macros/s/AKfycbx6hhxG7afxGSM7-Z3VWGE9GVcOvKNsMmj5CJ96S8VD5HKrB9elG2cH1V5ennBqO0uygQ/exec"; // Reemplaza con tu URL de Google Apps Script
-
-    fetch(url, {
+    fetch(googleAppsScriptURL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ userId, userScore })
     })
-    .then(response => response.text())
+    .then(response => response.json())
     .then(data => {
         console.log("✅ Respuesta del servidor:", data);
-        alert(data); // Muestra un mensaje si el resultado se guardó correctamente
+        alert(data.message); // Muestra un mensaje si el resultado se guardó correctamente
     })
     .catch(error => {
         console.error("❌ Error al guardar:", error);
     });
+}
+
+// 📌 Función para el temporizador
+function startTimer() {
+    timerValue = 10;
+    progressBar.style.width = '100%';
+
+    timerInterval = setInterval(function () {
+        timerValue -= 0.1;
+        var progressPercentage = (timerValue / 10) * 100;
+        progressBar.style.width = progressPercentage + '%';
+
+        if (timerValue <= 0) {
+            clearInterval(timerInterval);
+            checkAnswer(null);
+        }
+    }, 100);
 }
 
