@@ -138,7 +138,7 @@ function displayScore() {
     // Agregar un botón para volver al inicio (HOME)
     var homeButton = document.createElement('a');
     homeButton.textContent = '🏠 Volver al Inicio';
-    homeButton.href = '/';
+    homeButton.href = 'https://marrdzgt.github.io/S2_MAF.github.io/';
     homeButton.className = 'btn btn-primary mt-3';
     homeButton.style.display = 'block';
     homeButton.style.marginTop = '20px';
