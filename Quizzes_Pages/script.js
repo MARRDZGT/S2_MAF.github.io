@@ -18,9 +18,8 @@ var scoreElement = document.getElementById('score');
 var totalQuestionsElement = document.getElementById('total-questions');
 var progressBar = document.getElementById('progress-bar');
 
-// 📌 URL de Google Apps Script (reemplazada con la nueva)
+// 📌 URL de Google Apps Script
 var googleAppsScriptURL = "https://script.google.com/macros/s/AKfycbzcAi2oLCs1M3n_kUAWhp9yfj10Du3-IZZEuR2JSacl0ScDuihtApc1xkZpOu8SabkB1w/exec";
-
 
 // 📌 Verifica si un usuario ya hizo el examen
 function checkUserExists(userId, callback) {
@@ -57,6 +56,7 @@ startButton.addEventListener('click', function() {
 });
 
 // 📌 Mostrar preguntas del quiz
+
 function displayQuestion() {
     if (currentQuestionIndex >= quizQuestions.length) {
         displayScore();
@@ -64,9 +64,11 @@ function displayQuestion() {
     }
 
     var currentQuestion = quizQuestions[currentQuestionIndex];
+
     console.log("🟢 Mostrando pregunta:", currentQuestion);
 
-    questionArea.textContent = currentQuestion.question;
+    // 📌 Usa innerHTML para permitir que MathJax interprete el contenido LaTeX
+    questionArea.innerHTML = currentQuestion.question;
     optionsArea.innerHTML = '';
 
     for (var i = 0; i < currentQuestion.options.length; i++) {
@@ -78,6 +80,45 @@ function displayQuestion() {
         option.setAttribute('data-index', i);
         option.querySelector('label').addEventListener('click', checkAnswer);
         optionsArea.appendChild(option);
+    }
+
+    // 📌 Forzar renderizado de MathJax en la pregunta
+    MathJax.typesetPromise();
+    
+    startTimer();
+}
+
+
+
+function displayQuestion() {
+    if (currentQuestionIndex >= quizQuestions.length) {
+        displayScore();
+        return;
+    }
+
+    var currentQuestion = quizQuestions[currentQuestionIndex];
+
+    console.log("🟢 Mostrando pregunta:", currentQuestion);
+
+    questionArea.innerHTML = currentQuestion.question;
+    optionsArea.innerHTML = '';
+
+    for (var i = 0; i < currentQuestion.options.length; i++) {
+        var option = document.createElement('div');
+        option.className = 'option';
+        option.innerHTML =
+            `<input type="radio" name="answer" id="option${i}" value="${i}">
+            <label for="option${i}">${currentQuestion.options[i]}</label>`;
+        option.setAttribute('data-index', i);
+        option.querySelector('label').addEventListener('click', checkAnswer);
+        optionsArea.appendChild(option);
+    }
+
+    // Procesar con MathJax para renderizar LaTeX
+    if (window.MathJax) {
+        MathJax.typesetPromise();
+    } else {
+        console.error("⚠️ MathJax no está definido. Verifica que se haya cargado en tu HTML.");
     }
 
     startTimer();
@@ -138,7 +179,7 @@ function displayScore() {
     // Agregar un botón para volver al inicio (HOME)
     var homeButton = document.createElement('a');
     homeButton.textContent = '🏠 Volver al Inicio';
-    homeButton.href = './Quizzes_index.html';
+    homeButton.href = './e1.html';
     homeButton.className = 'btn btn-primary mt-3';
     homeButton.style.display = 'block';
     homeButton.style.marginTop = '20px';
