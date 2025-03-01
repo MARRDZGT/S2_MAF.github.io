@@ -127,13 +127,10 @@ function displayQuestion() {
 // 📌 Verificar la respuesta seleccionada
 function checkAnswer(event) {
     clearInterval(timerInterval);
-    
-    // Opción que disparó el evento (el <label> -> su contenedor .option)
     var selectedOption = event ? event.currentTarget.parentNode : null;
     var selectedAnswerIndex = selectedOption ? parseInt(selectedOption.getAttribute('data-index')) : null;
     var currentQuestion = quizQuestions[currentQuestionIndex];
 
-    // Verifica si fue la respuesta correcta
     if (selectedAnswerIndex !== null && selectedAnswerIndex === currentQuestion.correctAnswer) {
         feedbackArea.textContent = '✅ ¡Correcto!';
         score++;
@@ -143,32 +140,8 @@ function checkAnswer(event) {
         feedbackArea.textContent = '❌ Incorrecto.';
     }
 
-    // 🔴 Ocultar/inhabilitar las demás opciones de respuesta
-    var allOptions = document.querySelectorAll('.option');
-    allOptions.forEach(function(optionDiv) {
-        // Si no es la opción seleccionada, la ocultamos
-        if (optionDiv !== selectedOption) {
-            optionDiv.style.display = 'none';
-        } else {
-            // Si deseas, puedes marcar la elegida con un estilo especial
-            // Ej. ponerle un borde o algo:
-            optionDiv.style.border = "2px solid #ccc";
-        }
-        
-        // Además, se podría inhabilitar el input radio
-        var input = optionDiv.querySelector('input[type="radio"]');
-        if (input) {
-            input.disabled = true;
-        }
-    });
-
-    // Espera 2 segundos para ir a la siguiente pregunta
     setTimeout(nextQuestion, 2000);
 }
-
-
-
-
 
 // 📌 Pasar a la siguiente pregunta
 function nextQuestion() {

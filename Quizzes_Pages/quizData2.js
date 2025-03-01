@@ -40,10 +40,10 @@ var quizQuestions = [
   {
     question: "Sea $A \\subset X$ y $x \\in X$. Se dice que para todo $\\epsilon > 0$, $$B(x; \\epsilon) \\cap A \\neq \\emptyset$$ entonces:",
     options: [
+      "Es un punto interior de $\\; A \\;$",
       "Es un punto frontera o de acumulación de $\\; A \\;$",
       "Es un punto frontera o la frontera de $\\; A \\;$",
-      "Es la cerradura de $\\; A \\;$",
-      "Es un punto interior de $\\; A \\;$"
+      "Es la cerradura de $\\; A \\;$"
     ],
     correctAnswer: 0,
     feedback2: "¡Muy bien! es la definición de punto de acumulación",
@@ -53,8 +53,8 @@ var quizQuestions = [
     question: "Sea $A \\subset X$. Definimos $$\\partial A := \\{ x \\in X \\mid x \\text{ es un punto frontera de } A \\}.$$ ¿A qué corresponde?",
     options: [
       "Es un punto frontera o de acumulación de $\\; A \\;$",
-      "Es un punto frontera o la frontera de $\\; A \\;$",
       "Es la cerradura de $\\; A \\;$",
+      "La frontera de $\\; A \\;$",
       "Es un punto interior de $\\; A \\;$"
     ],
     correctAnswer: 1,
@@ -64,9 +64,9 @@ var quizQuestions = [
   {
     question: "Completa la frase: “Las bolas abiertas son ------------------------- y las bolas cerradas son -------------------”",
     options: [
+      "Bolas semi abiertas y semi cerradas",
       "Intervalos",
       "Conjuntos abiertos y conjuntos cerrados",
-      "Bolas semi abiertas y semi cerradas",
       "Bases de vecindades"
     ],
     correctAnswer: 1,
