@@ -45,7 +45,7 @@ var quizQuestions = [
       "Es un punto frontera o la frontera de $\\; A \\;$",
       "Es la cerradura de $\\; A \\;$"
     ],
-    correctAnswer: 0,
+    correctAnswer: 1,
     feedback2: "¡Muy bien! es la definición de punto de acumulación",
     feedback: "¡Error! revisa la condición que involucra $\\epsilon$"
   },
@@ -57,7 +57,7 @@ var quizQuestions = [
       "La frontera de $\\; A \\;$",
       "Es un punto interior de $\\; A \\;$"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     feedback2: "¡Muy bien! es la definición de la frontera de $A$",
     feedback: "¡Error! piensa en el conjunto de todos los puntos frontera"
   },
@@ -69,7 +69,7 @@ var quizQuestions = [
       "Conjuntos abiertos y conjuntos cerrados",
       "Bases de vecindades"
     ],
-    correctAnswer: 1,
+    correctAnswer: 2,
     feedback2: "¡Muy bien! recuerda que toda bola abierta es un conjunto abierto y, análogamente, toda bola cerrada es un conjunto cerrado",
     feedback: "¡Error! revisa cómo se definen los conjuntos abiertos y los conjuntos cerrados"
   },

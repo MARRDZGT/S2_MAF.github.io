@@ -72,50 +72,10 @@ startButton.addEventListener('click', function() {
     });
 
 
-
-    checkUserExists(userName, function(exists) {
-        if (exists) {
-            alert("Este número de cuenta ya ha completado el examen.");
-        } else {
-            welcomeContainer.style.display = 'none';
-            quizContainer.classList.remove('d-none');
-            displayQuestion();
-        }
-    });
 });
 
 // 📌 Mostrar preguntas del quiz
 
-function displayQuestion() {
-    if (currentQuestionIndex >= quizQuestions.length) {
-        displayScore();
-        return;
-    }
-
-    var currentQuestion = quizQuestions[currentQuestionIndex];
-
-    console.log("🟢 Mostrando pregunta:", currentQuestion);
-
-    // 📌 Usa innerHTML para permitir que MathJax interprete el contenido LaTeX
-    questionArea.innerHTML = currentQuestion.question;
-    optionsArea.innerHTML = '';
-
-    for (var i = 0; i < currentQuestion.options.length; i++) {
-        var option = document.createElement('div');
-        option.className = 'option';
-        option.innerHTML =
-            `<input type="radio" name="answer" id="option${i}" value="${i}">
-            <label for="option${i}">${currentQuestion.options[i]}</label>`;
-        option.setAttribute('data-index', i);
-        option.querySelector('label').addEventListener('click', checkAnswer);
-        optionsArea.appendChild(option);
-    }
-
-    // 📌 Forzar renderizado de MathJax en la pregunta
-    MathJax.typesetPromise();
-    
-    startTimer();
-}
 
 
 
