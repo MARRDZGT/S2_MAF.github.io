@@ -10,7 +10,7 @@ var quizQuestions = [
       "$\\frac{1}{2} - \\frac{\\sqrt{3}}{2} (x - 2\\pi/6) - \\frac{1}{4} (x - \\pi/3)^2 + \\frac{\\sqrt{4}}{12} (x - \\pi/3)^3 + \\frac{1}{48} (x - \\pi/3)^4 + \\dots \\;$"
     ],
     correctAnswer: 0,
-    feedback2: "¡Muy bien! esa es la definición de Bola abierta",
+    feedback2: "¡Muy bien! esa es la definición",
     feedback: "¡error!  observa bien las desigualdades"
   },
   {
