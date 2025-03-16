@@ -18,7 +18,7 @@ var quizQuestions = [
     options: [
       "$\\sin(x) = \\sum_{n=1}^{\\infty} \\frac{(-1)^n}{(2n+1)!} x^{2n+1} \\;$",
       "$\\sin(x) = x + \\frac{x^3}{3!} + \\frac{x^5}{5!} - \\frac{x^7}{7!} - \\frac{x^9}{9!} + \\dots\\;$",
-      "$\\sin(x) = x + \\frac{x^3}{3!} + \\frac{x^5}{5!} + \\frac{x^7}{7!} + \\frac{x^9}{9!} + \dots\\;$",
+      "$\\sin(x) = x + \\frac{x^3}{3!} + \\frac{x^5}{5!} + \\frac{x^7}{7!} + \\frac{x^9}{9!} + \\dots\\;$",
       "$\\sin(x) = \\sum_{n=0}^{\\infty} \\frac{(-1)^n}{(2n+1)!} x^{2n+1} \\;$",
     ],
     correctAnswer: 3,
