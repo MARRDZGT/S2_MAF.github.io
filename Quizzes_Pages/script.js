@@ -223,7 +223,7 @@ function startTimer() {
     progressBar.style.width = '100%';
 
     timerInterval = setInterval(function () {
-        timerValue -= 0.05;
+        timerValue -= 0.005;
         var progressPercentage = (timerValue / 10) * 100;
         progressBar.style.width = progressPercentage + '%';
 

@@ -1,0 +1,76 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[utf8]{inputenc}
+
+\begin{document}
+
+\section*{Expansión en series de Taylor y Maclaurin}
+
+\subsection*{Expansión de $f(x) = \cos x$ en una serie de Taylor alrededor de $x = \pi/3$}
+
+Se puede demostrar fácilmente que la $n$-ésima derivada de $f(x)$ está dada por:
+\begin{equation}
+    f^{(n)}(x) = \cos \left( x + \frac{n \pi}{2} \right).
+\end{equation}
+
+Por lo tanto, el término de residuo después de expandir $f(x)$ en un polinomio de orden $(n-1)$ alrededor de $x = \pi/3$ es:
+\begin{equation}
+    R_n(x) = \frac{(x - \pi/3)^n}{n!} \cos \left( \xi + \frac{n \pi}{2} \right),
+\end{equation}
+donde $\xi$ se encuentra en el intervalo $[\pi/3, x]$. Como el valor absoluto del coseno es siempre menor o igual a uno, se cumple que $|R_n(x)| < |(x - \pi/3)^n|/n!$. En el límite $n \to \infty$, se tiene que $R_n(x) \to 0$ para cualquier valor particular de $x$, por lo que $\cos x$ puede representarse mediante una serie de Taylor infinita alrededor de $x = \pi/3$.
+
+Evaluando la función y sus derivadas en $x = \pi/3$, obtenemos:
+\begin{align*}
+    f(\pi/3) &= \cos(\pi/3) = \frac{1}{2}, \\
+    f'(\pi/3) &= \cos(5\pi/6) = -\frac{\sqrt{3}}{2}, \\
+    f''(\pi/3) &= \cos(4\pi/3) = -\frac{1}{2},
+\end{align*}
+y así sucesivamente. Por lo tanto, la expansión en serie de Taylor de $\cos x$ alrededor de $x = \pi/3$ es:
+\begin{equation}
+    \cos x = \frac{1}{2} - \frac{\sqrt{3}}{2} (x - \pi/3) - \frac{1}{2} \frac{(x - \pi/3)^2}{2!} + \cdots.
+\end{equation}
+
+\subsection*{Expansión de $f(x) = \sin x$ en una serie de Maclaurin}
+
+Verificamos primero que $\sin x$ puede representarse mediante una serie de potencias infinita. Se puede demostrar que la $n$-ésima derivada de $f(x)$ es:
+\begin{equation}
+    f^{(n)}(x) = \sin \left( x + \frac{n \pi}{2} \right).
+\end{equation}
+
+Por lo tanto, el residuo después de expandir $f(x)$ en un polinomio de orden $(n-1)$ alrededor de $x=0$ está dado por:
+\begin{equation}
+    R_n(x) = \frac{x^n}{n!} \sin \left( \xi + \frac{n \pi}{2} \right),
+\end{equation}
+donde $\xi$ está en el intervalo $[0, x]$. Como el valor absoluto del seno es siempre menor o igual a uno, se cumple que $|R_n(x)| < |x^n|/n!$. Para cualquier valor de $x$, $R_n(x) \to 0$ cuando $n \to \infty$, lo que permite representar a $\sin x$ mediante una serie de Maclaurin infinita.
+
+Evaluando la función y sus derivadas en $x=0$, obtenemos:
+\begin{align*}
+    f(0) &= \sin 0 = 0, \\
+    f'(0) &= \sin(\pi/2) = 1, \\
+    f''(0) &= \sin \pi = 0, \\
+    f'''(0) &= \sin(3\pi/2) = -1,
+\end{align*}
+y así sucesivamente. Por lo tanto, la serie de Maclaurin de $\sin x$ es:
+\begin{equation}
+    \sin x = x - \frac{x^3}{3!} + \frac{x^5}{5!} - \cdots.
+\end{equation}
+
+\subsection*{Función complementaria de la ecuación diferencial}
+
+Consideremos la ecuación diferencial:
+\begin{equation}
+    \frac{d^2 y}{dx^2} - 2 \frac{dy}{dx} + y = e^x.
+\end{equation}
+
+Para encontrar la función complementaria, igualamos el lado derecho a cero y proponemos $y = Ae^{\lambda x}$. Al sustituir en la ecuación y dividir por $Ae^{\lambda x}$, obtenemos la ecuación auxiliar:
+\begin{equation}
+    \lambda^2 - 2\lambda + 1 = 0.
+\end{equation}
+
+La raíz $\lambda = 1$ aparece dos veces, lo que indica que $e^x$ es una solución, pero necesitamos encontrar otra solución linealmente independiente. Como se deduce del análisis anterior, $xe^x$ es una solución independiente, por lo que la función complementaria está dada por:
+\begin{equation}
+    y_c(x) = (c_1 + c_2 x)e^x.
+\end{equation}
+
+\end{document}
