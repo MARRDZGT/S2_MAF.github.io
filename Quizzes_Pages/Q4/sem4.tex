@@ -1,0 +1,184 @@
+\documentclass{exam}
+\usepackage[T1]{fontenc}
+\usepackage[activeacute,spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{amssymb}
+\usepackage{amsmath, amsfonts, amsthm}
+
+
+\begin{document}
+
+\begin{center}
+\fbox{\fbox{\parbox{6.5in}{\centering
+{\large Matemáticas Avanzadas de la Física}\\
+\textbf{\large Semanal 4}}}}
+\end{center}
+
+\vspace{3mm}
+\makebox[0.9\textwidth]{Semana de Entrega: 4}
+
+%\date{\displaydate{date}}
+
+\vspace{5mm}
+
+\begin{questions}
+
+\question Una sucesión $(x_n)$ en un espacio métrico $(X,d)$ ---------- o es ------------- a $x \in X$ si
+
+\[\lim_{ n \to \infty} d(x_n, x) = 0\]
+
+donde al punto $x$ se le llama el límite de la sucesión $(x_n)$
+
+\begin{itemize}
+\item[a)] Converge o es divergente
+\item[b)] Converge o es convergente
+\item[c)] Diverge o es convergente
+\item[d)] Diverge o es divergente
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! esa es la definición de convergencia\\
+Respuesta erronea: ¡error!  cuidado con los juegos de palabras.
+
+\question La sucesión $1/n$ (si, hasta el cansancio) es un buen ejemplo de una sucesión divergente, sin embargo existe el límite: su límite es $0$. ¿Qué condición necesita para ser convergente? 
+
+
+
+\begin{itemize}
+\item[a)] La sucesión no converge en $X$, por lo tanto su límite está en $X$
+\item[b)] Para que la sucesión sea convergente en $X$, se necesita que el límite esté en $X$
+\item[c)] La sucesión simplemente diverge
+\item[d)] La sucesión es convergente
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! si el límite está en el espacio, la sucesión es convergente\\
+Respuesta erronea: Cuidado, podemos hacer que esta sucesión sea convergente, necesitamos que su límite esté en el espacio métrico.
+
+\question Sea $X$ un espacio vectorial sobre el campo. Una norma es una función $||.|| : X \to [0,\infty)$ si y sólo si
+
+\[||x|| \geq 0 \quad \text{y} \quad ||x|| = 0 \Leftrightarrow x = 0\]
+
+a esta propiedad se le conoce
+
+\begin{itemize}
+\item[a)] La norma de un subespacio
+\item[b)] La norma es definida positiva
+\item[c)] Homogeneidad del valor absoluto
+\item[d)] Desigualdad del triángulo
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! la norma por definición debe ser positiva\\
+Respuesta erronea: ¡error! recuerda las tres propiedades de un espacio normado.
+
+\question Sea $X$ un espacio vectorial sobre el campo. Una norma es una función $||.|| : X \to [0,\infty)$ si y sólo si
+
+\[||\lambda x||  = |\lambda| ||x|| \quad \forall \lambda \in \mathbb{K} \quad \text{y} \quad x \in X\]
+
+a esta propiedad se le conoce
+
+\begin{itemize}
+\item[a)] La norma de un subespacio
+\item[b)] La norma es definida positiva
+\item[c)] Homogeneidad del valor absoluto
+\item[d)] Desigualdad del triángulo
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! esta es la homogeneidad del valor absoluto\\
+Respuesta erronea: ¡error! recuerda las tres propiedades de un espacio normado.
+
+\question Sea $X$ un espacio vectorial sobre el campo. Una norma es una función $||.|| : X \to [0,\infty)$ si y sólo si
+
+\[||x+y|| \leq ||x|| + ||y|| \quad \forall x, y \in X  \]
+
+a esta propiedad se le conoce
+
+\begin{itemize}
+\item[a)] La norma de un subespacio
+\item[b)] La norma es definida positiva
+\item[c)] Homogeneidad del valor absoluto
+\item[d)] Desigualdad del triángulo
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! esta es la desigualdad del triángulo para normas\\
+Respuesta erronea: ¡error! recuerda las tres propiedades de un espacio normado.
+
+\question Sea $(X, ||\cdot||)$ un espacio normado. La norma da la noción de ``------'' a cada vector del espacio vectorial e induce una métrica $d$ sobre $X$, dada por
+
+\[d_{||\cdot||}(x,y) = ||x-y|| \]
+
+\begin{itemize}
+\item[a)] Longitud
+\item[b)] Distancia
+\item[c)] Espacio
+\item[d)] Continuidad
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! la norma da la noción de longitud, así como la métrica da la noción de distancia\\
+Respuesta erronea: ¡error! si la métrica da noción de distancia ¿qué nos dice la norma?
+
+\question Si el espacio normado $(X, ||\cdot||)$ es un espacio de Banach ¿cuáles son las condiciones para que esto suceda?
+
+\begin{itemize}
+\item[a)] Que el espacio tenga estructura de espacio vectorial y que sea completo (Toda sucesión de elementos del espacio es de Cauchy)
+\item[b)] Que el espacio sea métrico y topológico
+\item[c)] Que el espacio sea vectorial y defina una métrica
+\item[d)] Que toda sucesión de Cauchy sea convergente en el espacio.
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! Es de Banach.\\
+Respuesta erronea: ¡error! Piensa en la completez de espacios normados.
+
+\question la suma y el producto de normas, pueden escribirse como una generalización de la desigualdad del trińgulo, para el caso del producto
+
+\[\sum_{j=1}^{n} |x_j y_j| \leq  \left(\sqrt{\sum_{k=1}^{n}|x_k|^p}\right)^{\frac{1}{p}} \left(\sqrt{\sum_{m=1}^{n}|y_m|^q}\right) ^{\frac{1}{q}}\]
+
+con $p > 1$ y $\frac{1}{p} + \frac{1}{q} = 1$
+
+y la suma
+
+\[ \left(\sum_{j=1}^{n} |x_j + y_ j|^p \left)^{\frac{1}{p}} \leq \left(\sqrt{\sum_{k=1}^{n}|x_k|^p}\right)^{\frac{1}{p}} + \left(\sqrt{\sum_{m=1}^{n}|y_m|^p}\right)^{\frac{1}{p}}\]
+
+donde $p \geq 1$. Son conocidas como:
+ 
+  
+\begin{itemize}
+\item[a)] Desigualdad del triángulo generalizada
+\item[b)] Desigualdades $l^p$
+\item[c)] Desigualdad de Hölder y Minkowsky
+\item[d)] Desigualdad de Cauchy y Minkowsky
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! Son las desigualdades de Hölder y Minkowsky\\
+Respuesta erronea: ¡error! La prueba está en la tarea.
+
+\question Completa: Del teorema: ``Cada subespacio de dimensión ------------ y de un espacio normado $X$ es completo. En partícular, cada espacio normado de dimensión -------- es completo.'' 
+
+\begin{itemize}
+\item[a)] Dimensión finita
+\item[b)] Dimensión infinita
+\item[c)] Dimensión infinita y finita
+\item[d)] Dimensión finita e infinita.
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! Un espacio normado de dimensión finita es completo\
+Respuesta erronea: ¡error! lee con cuidado.
+
+
+\question Sea una sucesión infinita de términos $a_1, a_2, ... $. Se define su suma parcial como
+
+\[S_i = \sum _{n=1}^{i} a_n\]
+
+Si la suma parcial converge a cierto límite finito cuando $i \to \infty$, la serie infinita se dice 
+
+\begin{itemize}
+\item[a)] Convergente y debe cumplir el critero de Cauchy
+\item[b)] Convergente y esta condición es suficiente
+\item[c)] Divergente y necesita cumplir el critero de Cauchy
+\item[d)] No dice nada
+\end{itemize}
+
+Respuesta buena: ¡Muy bien! La serie tiende a cierto límite pero debe de cumplir el criterio de convergencia de Cauchy (condición necesaria y suficiente)\\
+Respuesta erronea: ¡error! la suma infinita debe ser de Cauchy y tener límite en el espacio.
+\end{questions}
+\end{document}
